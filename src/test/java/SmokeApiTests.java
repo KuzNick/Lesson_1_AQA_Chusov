@@ -56,5 +56,20 @@ public class SmokeApiTests {
                 .then().log().body().statusCode(200);
     }
 
+    @Test
+    @Order(3)
+    void delUserTest() {
+        //given -config
+        //when - http
+        //then - assert
 
+
+        given()
+                .header("accept", "application/json")
+                .header("Content-Type", "application/json")
+                .baseUri(BASE_URL)
+                .basePath("user/string")
+                .when().delete()
+                .then().log().body().statusCode(200);
+    }
 }
